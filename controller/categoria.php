@@ -15,7 +15,11 @@ case "GetID":
     break;
 case "Insert":
     $datos=$categoria->insert_categoria($body["cat_nom"], $body["cat_obs"]);
-    echo "Isertado";
+    echo json_encode("Isertado");
+    break;
+case "Update":
+    $datos=$categoria->update_categoria($body["cat_id"],$body["cat_nom"], $body["cat_obs"]);
+    echo json_encode("Actualizado");
     break;
 }
 
