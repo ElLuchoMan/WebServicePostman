@@ -38,6 +38,15 @@ public function update_categoria($cat_id,$cat_nom,$cat_obs){
     $sql->execute();
     return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
 }
+public function delete_categoria($cat_id){
+    $conectar=parent::conexion();
+    parent::set_names();
+    $sql="UPDATE categoria SET est = '0' WHERE cat_id=?";
+    $sql=$conectar->prepare($sql);
+    $sql->bindValue(3,$cat_id);
+    $sql->execute();
+    return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+}
 
 }
 

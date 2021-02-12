@@ -21,6 +21,10 @@ case "Update":
     $datos=$categoria->update_categoria($body["cat_id"],$body["cat_nom"], $body["cat_obs"]);
     echo json_encode("Actualizado");
     break;
+    case "Delete":
+        $datos=$categoria->delete_categoria($body["cat_id"]);
+        echo json_encode("Eliminado");
+        break;
 }
 
 ?>
